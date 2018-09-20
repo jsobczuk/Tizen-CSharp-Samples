@@ -53,19 +53,21 @@ namespace Weather.Utils
             switch (fmt)
             {
                 case "temp":
-                {
-                    var sign = RegionInfo.CurrentRegion.IsMetric ? "°C" : "°F";
-                    return $"{arg:0.0}{sign}";
-                }
+                    {
+                        var sign = RegionInfo.CurrentRegion.IsMetric ? "°C" : "°F";
+                        return $"{arg:0.0}{sign}";
+                    }
+
                 case "speed":
-                {
-                    var sign = RegionInfo.CurrentRegion.IsMetric ? " m/s" : " mph";
-                    return $"{arg:0.00}{sign}";
-                }
+                    {
+                        var sign = RegionInfo.CurrentRegion.IsMetric ? " m/s" : " mph";
+                        return $"{arg:0.00}{sign}";
+                    }
+
                 default:
-                {
-                    return arg.ToString();
-                }
+                    {
+                        return arg.ToString();
+                    }
             }
         }
 

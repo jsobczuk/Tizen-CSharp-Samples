@@ -89,11 +89,7 @@ namespace Weather.ViewModels
         {
             get
             {
-                if ((SelectedCity == null) && (EnteredCity.Length != 0))
-                {
-                    return true;
-                }
-                return false;
+                return ((SelectedCity == null) && (EnteredCity.Length != 0));
             }
         }
         /// <summary>
@@ -195,9 +191,7 @@ namespace Weather.ViewModels
             CheckWeatherCommand = new Command<Page>(ExecuteCheckWeatherCommand, CanExecuteCheckWeatherCommand);
 
             OnCityEnteredCommand = new Command(() => SelectedCity = Cities.FirstOrDefault());
-
-            // Fill in the country code for better "first run experience"           
-            SetProperty<string>(ref _enteredCountry, "US");            
+            
         }
 
         /// <summary>

@@ -41,13 +41,17 @@ namespace Weather.Views
         /// <summary>
         /// Handle bezel rotation
         /// </summary>
-        /// <param name="args"></param>
+        /// <param name="args"> Arguments </param>
         public void Rotate(RotaryEventArgs args)
         {
             var a = this.BindingContext;
 
-            if (_rotating) return;        
-            _rotating = true;           
+            if (_rotating)
+            {
+                return;
+            }
+
+            _rotating = true;
             if (args.IsClockwise)
             {
                 ((ViewModels.ForecastViewModel)BindingContext).NextForecastCommand.Execute(null);

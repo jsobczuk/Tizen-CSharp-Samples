@@ -38,7 +38,7 @@
                    HorizontalTextAlignment="Center"
                    VerticalTextAlignment="Center" />
 
-            <Entry BackgroundColor="White"
+            <w:PopupEntry BackgroundColor="White"
                    HorizontalTextAlignment="Center"
                    HorizontalOptions="Center"
                    WidthRequest="280"
@@ -46,7 +46,7 @@
                 <Entry.Behaviors>
                     <behaviors:CountryCodeValidatorBehavior MaxLength="2" />
                 </Entry.Behaviors>
-            </Entry>
+            </w:PopupEntry>
 
             <Label Text="City:"
                    FontSize="8"
@@ -57,6 +57,7 @@
 
             <w:PopupEntry x:Name="CityEntry"
                    BackgroundColor="White"
+                   HorizontalTextAlignment="Center"
                    HorizontalOptions="Center"
                    WidthRequest="280"
                    Text="{Binding EnteredCity, Mode=TwoWay}">
